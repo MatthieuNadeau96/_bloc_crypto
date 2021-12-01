@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:io';
 import 'package:bloc_crypto/src/models/item_model.dart';
 import 'package:http/http.dart' show Client;
 import 'dart:convert';
@@ -9,9 +8,9 @@ class CryptoApiProvider {
   Client client = Client();
   final _apiKey = FlutterConfig.get('API_KEY');
   Uri uri = Uri.parse(
-      'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest/key/');
+      'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest');
 
-  Future<ItemModel> fetchCryptoList() async {
+  Future<ItemModel> fetchCoinList() async {
     print('entered');
     final response = await client.get(
       uri,
