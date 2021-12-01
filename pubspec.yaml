@@ -33,6 +33,8 @@ dependencies:
   rxdart: ^0.27.3
   # future-based library for making HTTP requests
   http: ^0.13.4
+  # exposes environment variables
+  flutter_config: ^2.0.0
 
 dev_dependencies:
   flutter_test:
