@@ -1,3 +1,4 @@
+import 'package:bloc_crypto/src/app.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_config/flutter_config.dart';
 
@@ -26,10 +27,6 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Text('hi'),
-      ),
-    );
+    return App();
   }
 }
