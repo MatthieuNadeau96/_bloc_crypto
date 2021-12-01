@@ -4,5 +4,5 @@ import 'package:bloc_crypto/src/resources/crypto_api_provider.dart';
 class Repository {
   final cryptoApiProvider = CryptoApiProvider();
 
-  Future<ItemModel> fetchAllCoins() => cryptoApiProvider.fetchCryptoList();
+  Future<ItemModel> fetchAllCoins() => cryptoApiProvider.fetchCoinList();
 }
