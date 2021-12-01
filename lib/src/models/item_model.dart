@@ -47,7 +47,7 @@ class _Data {
   int _total_supply;
   int _cmc_rank;
   DateTime _last_updated;
-  List<_Quote> _quote = [];
+  _Quote _quote;
 
   _Data(data) {
     _id = data['_id'];
@@ -62,12 +62,7 @@ class _Data {
     _total_supply = data['_total_supply'];
     _cmc_rank = data['_cmc_rank'];
     _last_updated = data['_last_updated'];
-    List<_Quote> temp = [];
-    for (int i = 0; i < data['quote'].length; i++) {
-      _Quote quote = _Quote(data['quote'][i]);
-      temp.add(quote);
-    }
-    _quote = temp;
+    _quote = _Quote(data['quote']['USD']);
   }
 
   int get id => _id;
@@ -82,7 +77,7 @@ class _Data {
   int get total_supply => _total_supply;
   int get cmc_rank => _cmc_rank;
   DateTime get last_updated => _last_updated;
-  List<_Quote> get quote => _quote;
+  _Quote get quote => _quote;
 }
 
 class _Quote {
@@ -101,19 +96,19 @@ class _Quote {
   DateTime _last_updated;
 
   _Quote(quote) {
-    _price = quote['_price;'];
-    _volume_24h = quote['_volume_24h;'];
-    _volume_change_24h = quote['_volume_change_24h;'];
-    _percent_change_1h = quote['_percent_change_1h;'];
-    _percent_change_24h = quote['_percent_change_24h;'];
-    _percent_change_7d = quote['_percent_change_7d;'];
-    _percent_change_30d = quote['_percent_change_30d;'];
-    _percent_change_60d = quote['_percent_change_60d;'];
-    _percent_change_90d = quote['_percent_change_90d;'];
-    _market_cap = quote['_market_cap;'];
-    _market_cap_dominance = quote['_market_cap_dominance;'];
-    _fully_diluted_market_cap = quote['_fully_diluted_market_cap;'];
-    _last_updated = quote['_last_updated'];
+    _price = quote['price'];
+    _volume_24h = quote['volume_24h'];
+    _volume_change_24h = quote['volume_change_24h'];
+    _percent_change_1h = quote['percent_change_1h'];
+    _percent_change_24h = quote['percent_change_24h'];
+    _percent_change_7d = quote['percent_change_7d'];
+    _percent_change_30d = quote['percent_change_30d'];
+    _percent_change_60d = quote['percent_change_60d'];
+    _percent_change_90d = quote['percent_change_90d'];
+    _market_cap = quote['market_cap'];
+    _market_cap_dominance = quote['market_cap_dominance'];
+    _fully_diluted_market_cap = quote['fully_diluted_market_cap'];
+    _last_updated = quote['last_updated'];
   }
 
   int get price => _price;
